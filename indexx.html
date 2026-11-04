@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Bestie 💗</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffe0ed, #efdfff, #fff0f5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px;
+    overflow-x: hidden;
+}
+
+.card {
+    width: 100%;
+    max-width: 480px;
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.88);
+    border: 2px solid white;
+    border-radius: 30px;
+    box-shadow: 0 15px 45px #d88bb755;
+    position: relative;
+    z-index: 2;
+}
+
+.tag {
+    display: inline-block;
+    background: #ffe5f0;
+    color: #d63384;
+    padding: 9px 15px;
+    border-radius: 25px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+h1 {
+    color: #d63384;
+    font-size: clamp(28px, 8vw, 40px);
+    margin-top: 22px;
+}
+
+.name {
+    color: #9b59b6;
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.cake {
+    font-size: 75px;
+    margin: 20px 0;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+p {
+    color: #79536d;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+#message {
+    color: #c02675;
+    font-weight: bold;
+    min-height: 55px;
+    margin-top: 20px;
+}
+
+button {
+    background: linear-gradient(45deg, #ff78a9, #bd83f6);
+    color: white;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 8px 4px;
+    box-shadow: 0 5px 18px #d78cb455;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 22px #e99acb;
+}
+
+.letter {
+    display: none;
+    background: #fff0f7;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px dashed #ee91bd;
+    border-radius: 18px;
+    animation: appear 0.6s ease;
+}
+
+.letter h2 {
+    color: #d63384;
+    margin-bottom: 12px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    font-size: 25px;
+    animation: floatUp 7s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+    15% { opacity: 1; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+footer {
+    color: #c06a99;
+    font-size: 13px;
+    margin-top: 25px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <span class="tag">A LITTLE SURPRISE FOR YOU 🎀</span>
+
+    <h1>Happy Birthday praneethaa chelooo!</h1>
+
+    <div class="name">My Bestie 💗</div>
+
+    <div class="cake">🎂</div>
+
+    <p>
+        Today is all about YOU! ✨<br>
+        The girl who makes ordinary moments
+        feel like beautiful memories.
+    </p>
+
+    <h3 id="message"></h3>
+
+    <button onclick="openLetter()">
+        Open Your Secret Letter 💌
+    </button>
+
+    <div class="letter" id="letter">
+        <h2>dear my gurlliee🫶</h2>
+
+        <p>
+Happpyy Birthday to the girl who made my life a little crazier, a lot happier, and a thousand times more beautiful. 🫶🏻
+</p>
+<p>
+Namma evlo thadava sanda potalum, evlo distance vandhaalum, en life la nee irundha memories eppovume special dhaan. I hope we always find our way back to each other." 🫂❤️
+</p>
+<p>
+            Now that you're officially 18, a whole new chapter of your life is beginning! I hope this chapter brings you so much happiness, success, confidence, and all the beautiful things you've been wishing for.</p>
+<p>
+ I hope you never settle for less than what you deserve and never lose that little spark that makes you YOU. 💌✨ </p>
+<p> 
+MISSINGGGG YOU A LOTT
+</p>
+<p> 
+And one thing paasam ahh pesaren nu over ahh aadatha oru naalaiku than ithela en vaila irunthu varum ketuko😏😂
+</p>
+
+
+        <h3>Forever my favourite human! ♾️💖</h3>
+    </div>
+
+    <button onclick="celebrate()">
+        Celebrate with me🧚‍♀️💕! 
+    </button>
+
+    <footer>
+        Made with 💗, just for you.
+        <br>luvvvvv yuhhh😚<br>
+    </footer>
+
+</div>
+
+<script>
+
+// Typewriter birthday message
+const text = "To my favourite human 💕";
+
+let index = 0;
+
+function typeMessage() {
+    if (index < text.length) {
+        document.getElementById("message").textContent +=
+            text.charAt(index);
+
+        index++;
+        setTimeout(typeMessage, 65);
+    }
+}
+
+typeMessage();
+
+
+// Reveal the secret letter
+function openLetter() {
+    const letter = document.getElementById("letter");
+
+    if (letter.style.display === "block") {
+        letter.style.display = "none";
+    } else {
+        letter.style.display = "block";
+    }
+}
+
+
+// Floating hearts
+const heartSymbols = ["💗", "💕", "💖", "💜", "✨"];
+
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.textContent =
+        heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+}
+
+setInterval(createHeart, 700);
+
+
+// Birthday confetti celebration
+function celebrate() {
+    const emojis = ["🎉", "💖", "✨", "🎊", "🌸", "💕"];
+
+    for (let i = 0; i < 60; i++) {
+        const item = document.createElement("span");
+
+        item.textContent =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        item.style.position = "fixed";
+        item.style.left = Math.random() * 100 + "vw";
+        item.style.top = Math.random() * 100 + "vh";
+        item.style.fontSize = (18 + Math.random() * 20) + "px";
+        item.style.pointerEvents = "none";
+        item.style.zIndex = "10";
+
+        document.body.appendChild(item);
+
+        item.animate([
+            {
+                transform: "translateY(0) rotate(0deg)",
+                opacity: 1
+            },
+            {
+                transform:
+                    "translateY(" + (100 + Math.random() * 300) +
+                    "px) rotate(360deg)",
+                opacity: 0
+            }
+        ], {
+            duration: 1200 + Math.random() * 1200,
+            easing: "ease-out"
+        });
+
+        setTimeout(() => item.remove(), 2600);
+    }
+}
+
+</script>
+
+</body>
+</html>
